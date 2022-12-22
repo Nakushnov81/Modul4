@@ -1,6 +1,6 @@
 from random import randint
 n = int(input('Введите количесво чисел: '))
-m = sorted([randint(0, 99) for i in range(n)])
+m = [randint(0, 99) for i in range(n)]
 print(m)
 
 def binary_search(array, key):
@@ -17,3 +17,13 @@ def binary_search(array, key):
     return 'Такого числа нет в списке'
 
 print(binary_search(m, int(input('Какое число нужно найти: '))))
+
+def sort(m):
+    for i in range(1, len(m)):
+        z = m[i]
+        while i > 0 and m[i - 1] > z:
+            m[i] = m[i-1]
+            i = i-1
+        m[i] = z
+    print(m)
+sort(m)
