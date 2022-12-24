@@ -17,7 +17,6 @@ sort(m)
 
 
 def binary_search(array, key):
-    # sort(array)
     low = 0
     upp = len(array) - 1
     while low <= upp:
