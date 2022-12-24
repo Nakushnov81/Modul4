@@ -1,9 +1,23 @@
-'''from random import randint
+from random import randint
 n = int(input('Введите количесво чисел: '))
-m = [randint(0, 99) for i in range(n)]
-print(m)
+m = sorted([randint(0, 99) for i in range(n)])
+
+
+def sort(array):
+    for i in range(1, len(array)):
+        z = array[i]
+        while i > 0 and array[i - 1] > z:
+            array[i] = array[i-1]
+            i = i-1
+        array[i] = z
+    print(array)
+
+
+sort(m)
+
 
 def binary_search(array, key):
+    # sort(array)
     low = 0
     upp = len(array) - 1
     while low <= upp:
@@ -16,17 +30,8 @@ def binary_search(array, key):
             low = mid + 1
     return 'Такого числа нет в списке'
 
-print(binary_search(m, int(input('Какое число нужно найти: '))))
 
-def sort(m):
-    for i in range(1, len(m)):
-        z = m[i]
-        while i > 0 and m[i - 1] > z:
-            m[i] = m[i-1]
-            i = i-1
-        m[i] = z
-    print(m)
-sort(m)'''
+print('Индекс данного числа: ', binary_search(m, int(input('Какое число нужно найти: '))))
 
 graph = {'0': set(['1', '2']), '1': set(['0', '3', '4']), '2': set(['0']),
          '3': set(['1']), '4': set(['2', '3'])}
