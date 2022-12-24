@@ -1,7 +1,7 @@
 from random import randint
 n = int(input('Введите количесво чисел: '))
-m = sorted([randint(0, 99) for i in range(n)])
-
+m = [randint(0, 99) for i in range(n)]
+print(m)
 
 def sort(array):
     for i in range(1, len(array)):
@@ -43,7 +43,7 @@ def bfs(graph, v):
         u = to_explore.pop(0)
         print(u)
         new_vertices = [i for i in graph[u] if i not in visited]
-        to_explore.extend((new_vertices))
+        to_explore.extend(new_vertices)
         visited.update(new_vertices)
 
-bfs(graph, '0')
+bfs(graph, '4')
